@@ -84,3 +84,11 @@ modules:
         url: https://github.com/cnr-isti-vclab/vcglib/archive/refs/tags/2020.12.tar.gz
         sha256: 731c57435e39c4b958a1d766cadd9865d9db35e36410708f2da7818e9fa5f786
         dest: src/vcglib
+
+  - name: MeshLab-appdata
+    buildsystem: simple
+    build-commands:
+      - install -Dm644 $FLATPAK_ID.appdata.xml /app/share/metainfo/$FLATPAK_ID.metainfo.xml
+    sources:
+      - type: file
+        path: net.meshlab.MeshLab.appdata.xml
